@@ -1,0 +1,71 @@
+:root{
+    --hue: 200;
+    --saturation: 50%;
+    --foreground-color: hsl(var(--hue),var(--saturation), 75%);
+    --background-color: hsl(var(--hue),var(--saturation), 20%);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    background: var(--background-color);
+    overflow: hidden;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+.score__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6.5vh;
+    font-weight: bold;
+    padding-top: 1.5rem;
+    color: var(--foreground-color);
+    opacity: 0.5;
+}
+.score__container > div{
+    margin-right: 1rem;
+}
+.score__container .player__score {
+    border-right: 1vh solid  var(--foreground-color);
+    padding-right: 1rem;
+}
+
+.ball{
+    --x: 50;
+    --y: 50;
+    position: absolute;
+    width: 2.2vh;
+    height: 2.2vh;
+    top: calc(var(--y) * 1vh);
+    left: calc(var(--x) * 1vw);
+    background-color: var(--foreground-color);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.paddle{
+    --position: 50;
+    position: absolute;
+    width: 1vh;
+    height: 10vh;
+    top: calc(var(--position) * 1vh);
+    background-color: var(--foreground-color);
+    transform: translateY(-50%);
+}
+
+.left{
+    left: 1vw;
+}
+
+.right{
+    right: 1vw;
+}
+
+
+
